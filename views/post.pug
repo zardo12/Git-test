@@ -1,0 +1,20 @@
+html
+  head
+    title= titel 
+  body
+    h1 Welcome
+    div 
+       h4= tittel 
+       p= content
+
+    a(href= '/posts/') zurück zur liste
+    form(action=`/posts/delete/${_id}` method="post") 
+      input(type="submit" value='Löchen')
+    form(action=`/posts/update/${_id}` method='post') 
+      input(type="submit" value='Updat')
+      label(for="tittel") tittel 
+      input(id="tittel",type="text",name="tittel")
+      label(for="content") content 
+      input(id="content",type="text", name="content")
+      
+      

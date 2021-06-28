@@ -1,0 +1,11 @@
+html
+  head
+    title= titel 
+  body
+    h1 Welcome
+    div 
+      for post in list 
+         div 
+            h4= post.tittel 
+            p= post.content 
+            a(href=`/posts/${post._id}`) post  ansehen
