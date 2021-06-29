@@ -2,13 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const Postrouter = require('../server/routes/posts.routers')
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/bookStore',{useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false,});
+mongoose.connect(`mongodb+srv://zardasht:${process.env.ATLAS_PW}@cluster0.uyd8e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,{useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false,});
 const db = mongoose.connection;
 
-
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "pug");

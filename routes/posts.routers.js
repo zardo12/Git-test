@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const Posts  = require('../controllers/controller')
+const Posts = require('../controllers/controller')
 
 router.get('/about', async (req,res)=>{
     const list = await Posts.findAll();
