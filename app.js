@@ -17,7 +17,7 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.use('/posts',Postrouter)
 
-const port = 8080; 
+const port = process.env.PORT || 8080; 
 app.listen(port,function(){
     console.log(`server is running on port ${port}`)
 }) 
