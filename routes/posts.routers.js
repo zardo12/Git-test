@@ -10,7 +10,9 @@ router.get('/about', async (req,res)=>{
 router.get('/', async (req,res)=>{
     if (req.query.titel && req.query.content){
         const data = {tittel: req.query.titel, content: req.query.content}
-        const newpost = await Posts.create(data);
+        await Posts.create(data);
+        return res.redirect(req.originalUrl.split("?").shift());
+
         
     }
         const list = await Posts.findAll();
