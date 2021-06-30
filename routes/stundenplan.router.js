@@ -21,10 +21,12 @@ router.get('/', async (req,res)=>{
 })
 
 
-router.post('/',async (req,res) => {
+router.post('/create',async (req,res) => {
     const data = {
-    title:  req.body.title,
-    content: req.body.content
+    name:  req.body.name,
+    weekday: req.body.weekday,
+    start:  req.body.start,
+    end: req.body.end
     } 
     const topic = await Topics.create(data)
     console.log(topic)
