@@ -49,7 +49,7 @@ router.post('/update/:topicId', async (req,res) => {
 })
 
 
-router.post('/delete/:topicId', async (req,res) => {
+router.get('/delete/:topicId', async (req,res) => {
     const topics = await Topics.remove(req.params.topicId)
     const list = await Topics.findAll();
     res.send(list)
