@@ -42,9 +42,14 @@ router.get('/:topicId', async (req,res) => {
 })
 
 router.post('/update/:topicId', async (req,res) => {
-    const update = {tittel: req.body.tittel,content: req.body.content}
+    const update = {
+        name: req.body.name,
+        weekday: req.body.weekday,
+        start: req.body.start,
+        end: req.body.end,
+    }
     const topic = await  Topics.update(req.params.topicId,update)
-   res.send(topic)
+    res.send(topic)
    
 })
 
