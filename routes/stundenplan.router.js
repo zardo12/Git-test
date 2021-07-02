@@ -32,6 +32,19 @@ router.post('/create',async (req,res) => {
     console.log(topic)
     res.send(topic);
 })
+
+router.post('/createMeeting',async (req,res) => {
+    const data = {
+    name:  req.body.name,
+    date: req.body.date,
+    start:  req.body.start,
+    end: req.body.end
+    } 
+    const topic = await Topics.create(data)
+    console.log(topic)
+    res.send(topic);
+})
+
 router.get('/creattopic', (req,res) => {
     res.render('creattopic')
 })

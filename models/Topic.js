@@ -10,15 +10,15 @@ const topicSchema = mongoose.Schema({
     },
     weekday: {
     type: String,
-    required: true
     },
     start: {
     type: String,
-    required: true
     },
     end: {
     type: String,
-    required: true
+    },
+    date: {
+        type: String,
     },
 })
 module.exports = mongoose.model('Topics', topicSchema);
