@@ -66,6 +66,17 @@ router.post('/update/:topicId', async (req,res) => {
    
 })
 
+router.post('/updateMeeting/:topicId', async (req,res) => {
+    const update = {
+        name: req.body.name,
+        date: req.body.date,
+        start: req.body.start,
+        end: req.body.end,
+    }
+    const topic = await  Topics.update(req.params.topicId,update)
+    res.send(topic)
+   
+})
 
 router.get('/delete/:topicId', async (req,res) => {
     const topics = await Topics.remove(req.params.topicId)
